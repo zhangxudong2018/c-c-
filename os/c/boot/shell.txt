@@ -1,0 +1,6 @@
+nasm -I include/ -o mbr mbr.S
+dd if=mbr of=hd60M.img bs=512 count=1 conv=notrunc
+
+nasm -I include/ -o loader loader.S
+dd if=loader of=hd60M.img bs=512 count=2 seek=2 conv=notrunc
+
